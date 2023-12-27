@@ -1,0 +1,84 @@
+nav{
+    background-color:aquamarine;
+    padding: .2%;
+    font-size: large;
+    border-radius: 10%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#About_us{
+    margin-top: 5%;
+    
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: aquamarine;
+}
+
+#shelterSearch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+input {
+    border: 2px solid aquamarine;
+}
+
+#button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#button button{
+    font-size: large;
+    padding: .4%;
+}
+
+button {
+    border: 2px solid aquamarine;
+    background: white;
+    cursor: pointer;
+}
+
+
+.carousel-container {
+    overflow: hidden;
+    width: 300px;
+    margin: auto;
+  }
+
+  .carousel-inner {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #prevBtn, #nextBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+  }
+
+  #prevBtn { left: 10px; }
+  #nextBtn { right: 10px; }
