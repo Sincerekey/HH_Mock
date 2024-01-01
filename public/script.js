@@ -92,4 +92,3 @@ function topBooks(slideContainer) {
             new Glide('.glide', config).mount();
         })
 }
-

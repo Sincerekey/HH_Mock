@@ -34,11 +34,13 @@ router.post('/login', function(req,res,next){
       if(data.length>0){
          // Verifying the password
         if(data[0].password === user_password){
+          console.log(req.session)
           req.session.user ={
             first_name: data[0].first_name,
             last_name: data[0].last_name,
             user_name: data[0].user_name,
           }
+          console.log(req.session)
         res.redirect('/home')
         }else{
           res.send('Incorrect Password Or Username Already In Use')
