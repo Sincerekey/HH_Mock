@@ -77,8 +77,15 @@ button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
-  }
+    font-size: 20px;}
 
   #prevBtn { left: 10px; }
   #nextBtn { right: 10px; }
+
+.glide{
+    background: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}

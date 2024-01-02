@@ -1,4 +1,3 @@
-// const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
 
 function fetchBooks(url, postList) {
     fetch(url)
@@ -66,7 +65,7 @@ function getBookData(search, selector, postList) {
 
 
 
-function topBooks(slideContainer) {
+function topBooks(slideContainer, classname) {
     const subject = subjects[Math.floor(Math.random()*subjects.length)]
 
     fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:'${subject}'&key=${APIKEY}`)
@@ -89,6 +88,25 @@ function topBooks(slideContainer) {
                 type: 'carousel',
                 perView: 4
             };
-            new Glide('.glide', config).mount();
+            new Glide(`${classname}`, config).mount();
         })
 }
+
+const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
+document.addEventListener('DOMContentLoaded', function() {
+    
+
+    // If you want to call getBookData on button click
+    document.getElementById('searchButton').addEventListener('click', function() {
+        let title = document.getElementById('title');
+        let sub = document.getElementById('subject-select');
+        getBookData(
+            title.value,
+            sub.value,
+            document.getElementById('postList')
+        );
+        console.log(title)
+        console.log(title.value)
+    });
+});
+

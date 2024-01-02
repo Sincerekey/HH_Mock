@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     
 </head>
 <body>
@@ -16,7 +15,7 @@
             <li><%= Name %></li>
             <li>item</li>
             <li>item</li>
-            <li>item</li>
+           <a href="/search"><li>Search</li></a>
         </ul>
     </nav>
 
@@ -32,7 +31,7 @@
              urna nec tincidunt praesent semper. Feugiat nibh sed pulvinar proin. Facilisi nullam vehicula ipsum a. Elit sed vulputate 
              mi sit amet mauris commodo quis. Habitant morbi tristique senectus et netus et.</p>
     </section>
-    <div class="glide">
+    <div class="glide" class="car1">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides" id="sTrack">
           </ul>
@@ -42,49 +41,66 @@
           </div>
         </div>
       </div>
+    <br />
+    <br />
+    <br />
+      <div class="glide car2">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides" id="pTrack">
+          </ul>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+        <div class="glide car3">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides" id="tTrack">
+            </ul>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+          <div class="glide car4">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides" id="yTrack">
+              </ul>
+              <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+              </div>
+            </div>
+          </div>
       
-    <section id="shelterSearch">
-        <label for="title">Book Search</label>
+   
 
-        <select name="subjects" id="subject-select">
-        <option value="">-- Search For... --</option>
-        <option value="Title">Book Title</option>
-        <option value="author">Author</option>
-        <option value="publisher">Publisher</option>
-        <option value="genre">Genre</option>
-        <option value="ISBN">ISBN</option>
-        </select>
-        <span><input id='title' type="text" placeholder="To Kill a Mockingbird">
-            <button id="searchButton" >search</button></span>
-    </section>
-
-    <h4>Search results</h4>
-    <ul id="postList">
-    </ul>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
     <script src="/@glidejs/glide/dist/glide.min.js"></script>
     <script>
-        const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
         const subjects = ['COOKING','POETRY','DESIGN','POLITICAL SCIENCE','DRAMA','PSYCHOLOGY','TRAVEL','JUVENILE FICTION',
     'TRUE CRIME','JUVENILE NONFICTION','YOUNG ADULT FICTION' ];
         document.addEventListener('DOMContentLoaded', function() {
             
             // Call functions after import
-            topBooks(document.getElementById('sTrack'));
+            topBooks(document.getElementById('sTrack'),'.glide');
+            // Call functions after import
+            topBooks(document.getElementById('pTrack'),'.car2');
+            // Call functions after import
+            topBooks(document.getElementById('tTrack'),'.car3');
+            // Call functions after import
+            topBooks(document.getElementById('yTrack'),'.car4');
     
-            // If you want to call getBookData on button click
-            document.getElementById('searchButton').addEventListener('click', function() {
-                let title = document.getElementById('title');
-                let sub = document.getElementById('subject-select');
-                getBookData(
-                    title.value,
-                    sub.value,
-                    document.getElementById('postList')
-                );
-                console.log(title)
-                console.log(title.value)
-            });
+          
         });
     </script>
 
