@@ -12,7 +12,14 @@ function fetchBooks(url, postList) {
                     let listImg = document.createElement('li');
                     if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail) {
                         listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
-                        listItem.appendChild(listImg);
+                        let contiRead = document.createElement('button')
+                        contiRead.innerHTML= '<p>Read</p>'
+                        contiRead.addEventListener('click', function() {
+                            const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
+                            addToReadingList(isbn);
+                        });
+                        listItem.appendChild(listImg)
+                        listItem.appendChild(contiRead)
                     } else {
                         console.error('Missing imageLinks.smallThumbnail:', book);
                     }
@@ -63,11 +70,10 @@ function getBookData(search, selector, postList) {
 
 
 
-
+let contiReadList = []
 
 function topBooks(slideContainer, classname) {
     const subject = subjects[Math.floor(Math.random()*subjects.length)]
-
     fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:'${subject}'&key=${APIKEY}`)
         .then((res) => res.json())
         .then((res) => {
@@ -78,8 +84,14 @@ function topBooks(slideContainer, classname) {
                 listItem.textContent = book.volumeInfo.title;
                 let listImg = document.createElement('li');
                 listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`
+                let contiRead = document.createElement('button')
+                contiRead.innerHTML= '<p>Read</p>'
+                contiRead.addEventListener('click', function() {
+                    const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
+                    addToReadingList(isbn);
+                });
                 listItem.appendChild(listImg)
-
+                listItem.appendChild(contiRead)
                 slideContainer.appendChild(listItem)
                 listItem.classList.add('glide__slide')
             })
@@ -90,6 +102,17 @@ function topBooks(slideContainer, classname) {
             };
             new Glide(`${classname}`, config).mount();
         })
+}
+
+function addToReadingList(isbn) {
+    fetch(`/reading-list?isbn=${isbn}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
 
 const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';

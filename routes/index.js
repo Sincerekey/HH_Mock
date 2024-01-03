@@ -36,6 +36,7 @@ router.post('/login', function(req,res,next){
         if(data[0].password === user_password){
           console.log(req.session)
           req.session.user ={
+            ID: data[0].Id,
             first_name: data[0].first_name,
             last_name: data[0].last_name,
             user_name: data[0].user_name,
