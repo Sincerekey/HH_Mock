@@ -10,7 +10,12 @@
 </head>
 <body>
     <nav>
-      <%- include('./partials/nav') %>
+        <ul>
+            <li><%= Name %></li>
+            <li>item</li>
+            <li>item</li>
+           <a href="/search"><li>Search</li></a>
+        </ul>
     </nav>
 
     <section id="About_us">
@@ -32,7 +37,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides" id="sTrack">
           </ul>
-          <div class="glide__arrows" data-glide-el="controls">
+          <div class="glide__arrows btnControls" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
             <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
           </div>
@@ -45,7 +50,7 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides" id="pTrack">
           </ul>
-          <div class="glide__arrows" data-glide-el="controls">
+          <div class="glide__arrows btnControls" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
             <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
           </div>
@@ -58,10 +63,11 @@
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides" id="tTrack">
             </ul>
-            <div class="glide__arrows" data-glide-el="controls">
+            <div class="glide__arrows btnControls" data-glide-el="controls">
               <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
               <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
             </div>
+
           </div>
         </div>
         <br />
@@ -71,10 +77,13 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__slides" id="yTrack">
               </ul>
-              <div class="glide__arrows" data-glide-el="controls">
+         
+              <div class="glide__arrows btnControls" data-glide-el="controls">
                 <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
                 <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
               </div>
+    
+
             </div>
           </div>
       
@@ -83,6 +92,7 @@
     <script src="script.js" defer></script>
     
     <script src="/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="https://kit.fontawesome.com/c3792c3a55.js" crossorigin="anonymous"></script>
     <script>
         const subjects = ['COOKING','POETRY','DESIGN','POLITICAL SCIENCE','DRAMA','PSYCHOLOGY','TRAVEL','JUVENILE FICTION',
     'TRUE CRIME','JUVENILE NONFICTION','YOUNG ADULT FICTION' ];

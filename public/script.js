@@ -13,13 +13,24 @@ function fetchBooks(url, postList) {
                     if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail) {
                         listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                         let contiRead = document.createElement('button')
-                        contiRead.innerHTML= '<p>Read</p>'
+                        let favRead = document.createElement('button')
+                        contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
+                        favRead.innerHTML= '<i class="fa-regular fa-heart"></i>'
+                        contiRead.className = 'add-to-library';
+                        favRead.className = 'add-to-favorite';
                         contiRead.addEventListener('click', function() {
                             const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
                             addToReadingList(isbn);
+                            contiRead.innerHTML= '<i class="fa-solid fa-bookmark"></i>'
+                        });
+                        favRead.addEventListener('click', function() {
+                            const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
+                            addToFavoriteList(isbn);
+                            favRead.innerHTML = '<i class="fa-solid fa-heart"></i>'
                         });
                         listItem.appendChild(listImg)
                         listItem.appendChild(contiRead)
+                        listItem.appendChild(favRead)
                     } else {
                         console.error('Missing imageLinks.smallThumbnail:', book);
                     }
@@ -85,13 +96,22 @@ function topBooks(slideContainer, classname) {
                 let listImg = document.createElement('li');
                 listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`
                 let contiRead = document.createElement('button')
-                contiRead.innerHTML= '<p>Read</p>'
+                let favRead = document.createElement('button')
+                contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
+                favRead.innerHTML= '<i class="fa-regular fa-heart"></i>'
                 contiRead.addEventListener('click', function() {
                     const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
                     addToReadingList(isbn);
+                    contiRead.innerHTML= '<i class="fa-solid fa-bookmark"></i>'
+                });
+                favRead.addEventListener('click', function() {
+                    const isbn = book.volumeInfo.industryIdentifiers[0].identifier;
+                    addToFavoriteList(isbn);
+                    favRead.innerHTML = '<i class="fa-solid fa-heart"></i>'
                 });
                 listItem.appendChild(listImg)
                 listItem.appendChild(contiRead)
+                listItem.appendChild(favRead)
                 slideContainer.appendChild(listItem)
                 listItem.classList.add('glide__slide')
             })
@@ -113,6 +133,17 @@ function addToReadingList(isbn) {
         .catch((error) => {
             console.error('Error:', error);
         });
+}
+
+function addToFavoriteList(isbn){
+    fetch(`/favorite-list?isbn=${isbn}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
 const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';

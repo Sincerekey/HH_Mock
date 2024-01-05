@@ -1,0 +1,15 @@
+main{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(auto);
+    grid-gap: 5px;
+ 
+}
+
+section{
+    background: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
