@@ -9,6 +9,9 @@ var usersRouter = require('./routes/users');
 const homeRoute = require('./routes/home.js')
 const searchRoute = require('./routes/search.js')
 const readList = require('./routes/reading-list.js')
+const favList = require('./routes/favorite-list.js')
+const libraryRoute = require('./routes/library.js')
+const favoriteRoute = require('./routes/favorites.js')
 
 var app = express();
 const session = require('express-session')
@@ -23,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'wertyuijhgfdcfvbnm',
+  secret: 'fdfghbvfdfghjhg',
   resave: false,
   saveUninitialized: false,
 }))
@@ -33,6 +36,9 @@ app.use('/users', usersRouter);
 app.use('/home', homeRoute)
 app.use('/search', searchRoute)
 app.use('/reading-list', readList)
+app.use('/library', libraryRoute)
+app.use('/favorite-list', favList)
+app.use('/favorites', favoriteRoute)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
