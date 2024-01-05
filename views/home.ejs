@@ -10,12 +10,8 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><%= Name %></li>
-            <li>item</li>
-            <li>item</li>
-           <a href="/search"><li>Search</li></a>
-        </ul>
+      <%- include('partials/nav') %>
+
     </nav>
 
     <section id="About_us">
@@ -30,8 +26,9 @@
              urna nec tincidunt praesent semper. Feugiat nibh sed pulvinar proin. Facilisi nullam vehicula ipsum a. Elit sed vulputate 
              mi sit amet mauris commodo quis. Habitant morbi tristique senectus et netus et.</p>
     </section>
+
     <section>
-      <%- include('./partials/search') %>
+      <%- include('partials/search') %>
     </section>
     <div class="glide" class="car1">
         <div class="glide__track" data-glide-el="track">
@@ -110,7 +107,8 @@
           
         });
     </script>
-
-<%- include('./partials/footer') %>
+<footer>
+  <%- include('partials/footer') %>
+</footer>
 </body>
 </html>
