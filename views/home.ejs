@@ -12,8 +12,8 @@
     <nav>
         <ul>
             <li><%= Name %></li>
-            <a href="/favorites"><li>My Library</li></a>
-            <a href="/library"><li>My Library</li></a>
+            <li>item</li>
+            <li>item</li>
            <a href="/search"><li>Search</li></a>
         </ul>
     </nav>
@@ -29,6 +29,9 @@
              ornare massa. Ultrices neque ornare aenean euismod. In dictum non consectetur a erat nam at lectus. Fermentum posuere 
              urna nec tincidunt praesent semper. Feugiat nibh sed pulvinar proin. Facilisi nullam vehicula ipsum a. Elit sed vulputate 
              mi sit amet mauris commodo quis. Habitant morbi tristique senectus et netus et.</p>
+    </section>
+    <section>
+      <%- include('./partials/search') %>
     </section>
     <div class="glide" class="car1">
         <div class="glide__track" data-glide-el="track">
@@ -108,5 +111,6 @@
         });
     </script>
 
+<%- include('./partials/footer') %>
 </body>
 </html>
