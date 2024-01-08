@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login.js');
 var indexLogRouter = require('./routes/indexLog.js');
 var usersRouter = require('./routes/users');
 const homeRoute = require('./routes/home.js')
@@ -51,6 +52,7 @@ app.use('/p', product)
 app.use('/signUp', indexRouter)
 app.use('/Loggin', indexLogRouter)
 app.use('/kids', kidsRoute)
+app.use('/login', loginRouter)
 
 
 

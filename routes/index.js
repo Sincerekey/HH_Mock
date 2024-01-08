@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', function(req,res,next){
-  // console.log(req.body)
+  console.log(req.body)
   const user_email = req.body.user_email_address
   const user_password = req.body.user_password
   const first_name = req.body.first_name
