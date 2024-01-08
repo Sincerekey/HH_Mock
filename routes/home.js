@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.get('/', (req, res)=>{
     console.log(req.session);
-    res.render('home', {title: 'Home', Name: req.session.user.first_name});
+    res.render('home', { Name: req.session.user.first_name});
 })
 
 

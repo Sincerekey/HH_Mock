@@ -1,0 +1,62 @@
+footer {
+    border-top: 1px solid black; /* Thin black line at the top */
+    padding-top: 20px; /* Optional: Adds some space between the line and the content */
+}
+.container-list {
+    display: flex;
+    justify-content: center;
+}
+
+.first-list{
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    display:flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+.second-list {
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    display:flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+.third-list {
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    display:flex;
+    flex-direction: column; 
+    margin: 10px;
+    padding: 10px;
+}
+
+.sub {
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    display:flex;
+    flex-direction: column; 
+    margin: 10px;
+    padding: 10px;
+}
+
+.sm {
+    color: black;
+    display: flex;
+    flex-direction: row;  
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100px; /* Adjust this based on the total width you want for 3 icons */
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    margin: 3px;
+    flex: 0 0 30%; /* Flex basis of 30% for each icon */
+}
