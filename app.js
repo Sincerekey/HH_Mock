@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const landingRoute = require('./routes/landing.js')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const homeRoute = require('./routes/home.js')
@@ -13,6 +13,8 @@ const favList = require('./routes/favorite-list.js')
 const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
 const landingRoute = require('./routes/landing.js')
+const kidsRoute = require('./routes/kids.js')
+
 
 
 var app = express();
@@ -33,7 +35,7 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use('/', indexRouter);
+app.use('/', landingRoute);
 app.use('/users', usersRouter);
 app.use('/home', homeRoute)
 app.use('/search', searchRoute)
@@ -41,7 +43,10 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
-app.use('/landing', landingRoute)
+app.use('/signUp', indexRouter)
+app.use('/kids', kidsRoute)
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
