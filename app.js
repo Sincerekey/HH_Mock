@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const axios = require('axios');
 
 var indexRouter = require('./routes/index');
+var loginRouter = require('./routes/login.js');
 var indexLogRouter = require('./routes/indexLog.js');
 var usersRouter = require('./routes/users');
 const homeRoute = require('./routes/home.js')
@@ -19,6 +21,7 @@ const landingRoute = require('./routes/landing.js')
 const kidsRoute = require('./routes/kids.js')
 
 
+const nyTimesRouter = require('./routes/ny-times.js');
 
 var app = express();
 const session = require('express-session')

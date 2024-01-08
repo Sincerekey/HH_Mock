@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book-list {
+    width: 15%; 
+    margin: 1%;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: scale(1.05); 
+    z-index: 10;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
+h1 {
+    text-align: center;
+}
+
+.book-details {
+    padding: 15px;
+}

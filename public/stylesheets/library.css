@@ -1,4 +1,4 @@
-main{
+section{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: repeat(auto);
@@ -6,10 +6,10 @@ main{
  
 }
 
-section{
+/* section{
     background: aquamarine;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
