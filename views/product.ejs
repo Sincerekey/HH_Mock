@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./stylesheets/product.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+    <div class="main-body">
+    <img class="main-photo" alt='book photo' src="<%= img %>" width="256px" height="394 px"/>
+    <div class="main-info">
+    <h2><%= title %></h2>
+    <p class="desc"><%= description %></p> </div>
+    </div>
+    <p class=price><%= price %></p>
+    <a href="<%= sale %>">Purchase</a>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

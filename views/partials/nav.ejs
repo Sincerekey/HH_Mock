@@ -6,9 +6,8 @@
     <title>HOPE</title>
     <link rel="stylesheet" href="stylesheets/nav.css">
 </head>
-<body>
+<body> 
     <!-- Search Section -->
-    <nav>
     <section id="shelterSearch">
        
         <span id="search-box">
@@ -26,17 +25,19 @@
             <option value="ISBN">ISBN</option>
         </select>
     </section>
+
     
     <!-- Navigation Bar -->
     
         <ul>
-            <%= Name %>
-            <a href="/home">Home</a>
-            <a href="/favorites"><li>Favorites</li></a>
-            <a href="/library"><li>My Library</li></a>
+            <li><%= Name %></li>
+            <a href="/favorites"><li>My Favorites</li></a>
+            <a href="/library"><li>My Library</li></a> 
+            <a href="/kids"><li>Kids Corner</li></a>  
         </ul>
     </nav>
       
+
  
     <script src="script.js" defer></script>
 </body>
