@@ -12,6 +12,7 @@ const readList = require('./routes/reading-list.js')
 const favList = require('./routes/favorite-list.js')
 const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
+const landingRoute = require('./routes/landing.js')
 
 var app = express();
 const session = require('express-session')
@@ -39,6 +40,8 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
+app.use('/landing', landingRoute)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
