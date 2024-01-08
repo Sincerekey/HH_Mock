@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/nybest.css">
+    <title>Ny Times Best Selling</title>
+</head>
+<body>
+    <nav>
+        <%- include('partials/nav') %>
+  
+      </nav>
+
+      <section>
+        <%- include('partials/search') %>
+      </section>
+
+      <h1>Ny Times Best Selling</h1>
+      <ul>
+          <% books.forEach(book => { %>
+              <li class="book-list">
+                  <img src="<%= book.book_image %>" alt="Cover image of <%= book.title %>">
+                  <div class="book-details">
+                      <strong><%= book.title %></strong> by <%= book.author %>
+                      <p><%= book.description %></p>
+                  </div>
+              </li>
+          <% }); %>
+      </ul>
+      
+
+
+    <footer>
+        <%- include('partials/footer') %>
+      </footer>
+</body>
+</html>
