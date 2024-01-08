@@ -11,7 +11,11 @@ function fetchBooks(url, postList) {
                     listItem.textContent = book.volumeInfo.title;
                     let listImg = document.createElement('li');
                     if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail) {
-                        listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
+                        if (!book.volumeInfo.industryIdentifiers) {
+                            listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
+                        } else {
+                            listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                        }                        
                         let contiRead = document.createElement('button')
                         let favRead = document.createElement('button')
                         contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
@@ -94,8 +98,11 @@ function topBooks(slideContainer, classname) {
                 let listItem = document.createElement('li');
                 listItem.textContent = book.volumeInfo.title;
                 let listImg = document.createElement('li');
-                listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`
-                let contiRead = document.createElement('button')
+                if (!book.volumeInfo.industryIdentifiers) {
+                    listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
+                } else {
+                    listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                }                   let contiRead = document.createElement('button')
                 let favRead = document.createElement('button')
                 contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
                 favRead.innerHTML= '<i class="fa-regular fa-heart"></i>'
