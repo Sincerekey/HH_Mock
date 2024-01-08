@@ -34,7 +34,7 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use('/', indexRouter);
+app.use('/', landingRoute);
 app.use('/users', usersRouter);
 app.use('/home', homeRoute)
 app.use('/search', searchRoute)
@@ -42,7 +42,7 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
-app.use('/landing', landingRoute)
+app.use('/signUp', indexRouter)
 app.use('/kids', kidsRoute)
 
 
