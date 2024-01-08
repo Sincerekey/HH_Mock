@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
             throw(err)
         }else{
             data.forEach((element)=>{
-              console.log(element)
+              console.log(data)
                 fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${element.ISBN}&key=AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro`)
                 .then((data) => data.json())
                 .then((data) => { 
@@ -34,11 +34,10 @@ router.get('/', function(req, res, next) {
             }
             
             res.render('favorites', {Books: bookTitles, Name: req.session.user.first_name})
-           }, 2000)
+           }, 1500)
         }
 
     })
-    // res.end()
 });
 
 module.exports = router;

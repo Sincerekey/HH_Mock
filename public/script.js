@@ -125,8 +125,7 @@ function topBooks(slideContainer, classname) {
             // Initialize Glide carousel after fetch is completed
             const config = {
                 type: 'carousel',
-                perView: 4,
-                Autoplay: true,
+                perView: 4
             };
             new Glide(`${classname}`, config).mount();
         })
