@@ -14,6 +14,10 @@ const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
 const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
+const landingRoute = require('./routes/landing.js')
+const kidsRoute = require('./routes/kids.js')
+
+
 
 var app = express();
 const session = require('express-session')
@@ -33,7 +37,7 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use('/', indexRouter);
+app.use('/', landingRoute);
 app.use('/users', usersRouter);
 app.use('/home', homeRoute)
 app.use('/search', searchRoute)
@@ -43,6 +47,10 @@ app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
+app.use('/signUp', indexRouter)
+app.use('/kids', kidsRoute)
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
