@@ -8,10 +8,26 @@
     
 </head>
 <body>
-    <h1><%= Name %></h1>
+    <nav>
+        <%- include('partials/nav') %>
+  
+      </nav>
+
+    <section>
+    <%- include('partials/search') %>
+  </section>
+
+
     <main>
        <%- Books.join('') %>
         </main>
     <script src="./javascripts/FindLibrary.js"></script>
+
+
+
+
+    <footer>
+        <%- include('partials/footer') %>
+      </footer>
 </body>
 </html>

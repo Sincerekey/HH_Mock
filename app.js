@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const axios = require('axios');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +13,7 @@ const readList = require('./routes/reading-list.js')
 const favList = require('./routes/favorite-list.js')
 const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
+const nyTimesRouter = require('./routes/ny-times.js');
 
 var app = express();
 const session = require('express-session')
@@ -39,6 +41,10 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
+
+app.use('/top-20-bestsellers', nyTimesRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

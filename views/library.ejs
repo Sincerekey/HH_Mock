@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./stylesheets/library.css">
+    <link rel="stylesheet" href="sylesheets/nav.css">
+    <link rel="stylesheet" href="styles.css">
     
 </head>
 <body>
@@ -12,8 +14,7 @@
         <%- include('partials/nav') %>
   
       </nav>
-    <h1><%= Name %></h1>
-    <main>
+    <section>
         <!-- <section>
             <%- include('partials/search') %>
           </section> -->
@@ -21,7 +22,7 @@
             <%- book %>
        <% }); %> -->
        <%- Books.join('') %>
-        </main>
+        </section>
     <script src="./javascripts/FindLibrary.js"></script>
 
 
