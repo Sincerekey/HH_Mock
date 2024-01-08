@@ -49,7 +49,7 @@ app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/signUp', indexRouter)
-app.use('/Loggin', indexLogRouter)
+app.use('/Login', indexLogRouter)
 app.use('/kids', kidsRoute)
 
 
