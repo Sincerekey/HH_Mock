@@ -1,16 +1,36 @@
 .main-body {
+    margin: auto;
     display: flex;
     flex-direction: row;
     width: 75%;
     text-align: center;
+    margin-bottom: 20vh;
 }
 
 .main-photo {
     margin-top: 20px;
-    margin-left: 35px;
+    margin-left: 50px;
 }
 
 .main-info {
     margin-left: 25px;
     width: 50%;
+}
+
+.purchase-info {
+    margin-left: 25px;
+}
+
+.purchase-btn {
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+    border-radius: 2px;
+    transition: all .5s;
+}
+
+.purchase-btn:hover {
+    background-color: gray;
+    transition: all .5s;
 }

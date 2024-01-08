@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "axios": "^1.6.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -15,6 +16,10 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "mysql2": "^3.6.5",
+<<<<<<< HEAD
+    "node-fetch": "^3.3.2"
+=======
     "request": "^2.88.0"
+>>>>>>> 2319a258a8a2a8accbe1f52e34473d4e4d35d2ff
   }
 }
