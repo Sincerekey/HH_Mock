@@ -1,0 +1,16 @@
+.main-body {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    text-align: center;
+}
+
+.main-photo {
+    margin-top: 20px;
+    margin-left: 35px;
+}
+
+.main-info {
+    margin-left: 25px;
+    width: 50%;
+}
