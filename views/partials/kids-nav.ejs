@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOPE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Search Section -->
+    <nav>
+        <section id="shelterSearch">
+            <label for="title">Type of Books</label>
+    
+            <select name="subjects" id="subject-select-1">
+            <option value="">-- Search For... --</option>
+            <option value="Comics/Graphic-Novel">Comics & Graphic Novels</option>
+            <option value="Nonfiction">Nonfiction</option>
+            <option value="Fiction">Fiction</option>
+            <!-- <option value="genre">Genre</option> -->
+            <!-- <option value="ISBN">ISBN</option> -->
+            </select>
+            <!-- <span><input id='title' type="text" placeholder="Diary of a Wimpy Kid">
+                <button id="searchButton" >search</button></span>
+        </section>  -->
+    
+        <section id="shelterSearch">
+            <label for="title">Book Search</label>
+    
+            <select name="subjects" id="subject-select">
+            <option value="">-- Search For... --</option>
+            <option value="Title">Book Title</option>
+            <option value="author">Author</option>
+            <option value="publisher">Publisher</option>
+            <!-- <option value="genre">Genre</option> -->
+            <!-- <option value="ISBN">ISBN</option> -->
+            </select>
+            <span><input id='title' type="text" placeholder="Diary of a Wimpy Kid">
+                <button id="searchButton" >search</button></span>
+        </section>  
+    
+    <!-- Navigation Bar -->
+    
+        <ul>
+            <li><%= Name %></li>
+            <a href="/favorites"><li>My Library</li></a>
+            <a href="/library"><li>My Library</li></a>
+        </ul>
+    </nav>
+      
+ 
+    <script src="script.js" defer></script>
+</body>
+</html>

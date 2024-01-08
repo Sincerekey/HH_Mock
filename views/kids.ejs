@@ -15,41 +15,11 @@
 </head>
 
 <body>
-    <nav>
-        <%- include('partials/nav') %>
-    </nav>
+     <nav>
+        <%- include('partials/kids-nav') %>
+    </nav> 
 
-    <section id="shelterSearch">
-        <label for="title">Type of Books</label>
-
-        <select name="subjects" id="subject-select-1">
-        <option value="">-- Search For... --</option>
-        <option value="Comics/Graphic-Novel">Comics & Graphic Novels</option>
-        <option value="Nonfiction">Nonfiction</option>
-        <option value="Fiction">Fiction</option>
-        <!-- <option value="genre">Genre</option> -->
-        <!-- <option value="ISBN">ISBN</option> -->
-        </select>
-        <!-- <span><input id='title' type="text" placeholder="Diary of a Wimpy Kid">
-            <button id="searchButton" >search</button></span>
-    </section>  -->
-
-    <section id="shelterSearch">
-        <label for="title">Book Search</label>
-
-        <select name="subjects" id="subject-select">
-        <option value="">-- Search For... --</option>
-        <option value="Title">Book Title</option>
-        <option value="author">Author</option>
-        <option value="publisher">Publisher</option>
-        <!-- <option value="genre">Genre</option> -->
-        <!-- <option value="ISBN">ISBN</option> -->
-        </select>
-        <span><input id='title' type="text" placeholder="Diary of a Wimpy Kid">
-            <button id="searchButton" >search</button></span>
-    </section>  
- 
-    <section id="About_us">
+    <!-- <section id="About_us">
         <h1>Welcome to the Kid's Zone</h1> 
         <h2>Looking for something to read? We have books for all ages! </h2>
           <div class="carousel"> 
@@ -78,8 +48,10 @@ url('hopeHacksKidsImg/percy-2.jpeg');">
             </div> 
         </div> 
     </div> 
-    <br />
-
+    <br /> -->
+    <section>
+        <%- include('partials/search') %>
+      </section>
     </section>
     <div class="glide__arrows" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
@@ -122,7 +94,7 @@ url('hopeHacksKidsImg/percy-2.jpeg');">
 
     <script src="/@glidejs/glide/dist/glide.min.js"></script>
     <script>
-        const subjects = ["Juvenile Fiction", "Juvenile Nonfiction", "Comics & Graphic Novels"];
+        const subjects = ["Juvenile Fiction", "Juvenile Nonfiction", "Comics & Graphic Novels", "Young Adult Fiction"];
         document.addEventListener('DOMContentLoaded', function () {
 
             // Call functions after import

@@ -26,25 +26,53 @@ window.onload = function () {
         } 
     }, 1500); 
 };  
+
 const genre = document.getElementById("#subject-select-1").value 
-
-
-
-
-if(genre = "Comics/Graphic-Novel"){
-    const subject = "Comics & Graphic Novels"
+switch (genre){
+    case 'Comics/Graphic-Novel':
+        var subject = "Comics & Graphic Novels"
+    function getBookData(search, selector, postList,) {
+        let url;
+    
+        switch (selector) {
+            case 'Title':
+                url = `https://www.googleapis.com/books/v1/volumes?q=${search}+subject=${subject}&key=${APIKEY}&maxResults=40`;
+                break;
+            case 'author':
+                url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
+                break;
+            case 'publisher':
+                url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
+                break;
+            // case 'genre':
+            //     url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
+            //     break;
+            // case 'ISBN':
+            //     url = `https://www.googleapis.com/books/v1/volumes?q=isbn:'${search}'&key=${APIKEY}`;
+            //     break;
+            default:
+                console.error('Invalid selector:', selector);
+                return;
+        }
+    
+        fetchBooks(url, postList);
+        
+    }
+    break;
+    case "Fiction":
+        var subject = "Young Adult Fiction"
     function getBookData(search, selector, postList) {
         let url;
     
         switch (selector) {
             case 'Title':
-                url = `https://www.googleapis.com/books/v1/volumes?q=${search}+${subject}&key=${APIKEY}&maxResults=40`;
+                url = `https://www.googleapis.com/books/v1/volumes?q=${search}+subject=${subject}&key=${APIKEY}&maxResults=40`;
                 break;
             case 'author':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
+                url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
                 break;
             case 'publisher':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
+                url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
                 break;
             // case 'genre':
             //     url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
@@ -59,67 +87,53 @@ if(genre = "Comics/Graphic-Novel"){
     
         fetchBooks(url, postList);
     }
-
+    break;
+    case "Nonfiction":
+        var subject = "Juvenile Nonfiction"
+        function getBookData(search, selector, postList) {
+            let url;
+        
+            switch (selector) {
+                case 'Title':
+                    url = `https://www.googleapis.com/books/v1/volumes?q=${search}+subject=${subject}&key=${APIKEY}&maxResults=40`;
+                    break;
+                case 'author':
+                    url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
+                    break;
+                case 'publisher':
+                    url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+subject=${subject}'&key=${APIKEY}&maxResults=40`;
+                    break;
+                // case 'genre':
+                //     url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
+                //     break;
+                // case 'ISBN':
+                //     url = `https://www.googleapis.com/books/v1/volumes?q=isbn:'${search}'&key=${APIKEY}`;
+                //     break;
+                default:
+                    console.error('Invalid selector:', selector);
+                    return;
+            }
+        
+            fetchBooks(url, postList);
+        }
 } 
 
-if(genre = "NonFiction"){
-    const subject = "Young Adult Fiction"
-    function getBookData(search, selector, postList) {
-        let url;
-    
-        switch (selector) {
-            case 'Title':
-                url = `https://www.googleapis.com/books/v1/volumes?q=${search}+${subject}&key=${APIKEY}&maxResults=40`;
-                break;
-            case 'author':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
-                break;
-            case 'publisher':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
-                break;
-            // case 'genre':
-            //     url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
-            //     break;
-            // case 'ISBN':
-            //     url = `https://www.googleapis.com/books/v1/volumes?q=isbn:'${search}'&key=${APIKEY}`;
-            //     break;
-            default:
-                console.error('Invalid selector:', selector);
-                return;
-        }
-    
-        fetchBooks(url, postList);
-    }
 
-}
 
-if(genre = "Fiction"){
-    const subject = "Young Adult Nonfiction"
-    function getBookData(search, selector, postList) {
-        let url;
+const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
+document.addEventListener('DOMContentLoaded', function() {
     
-        switch (selector) {
-            case 'Title':
-                url = `https://www.googleapis.com/books/v1/volumes?q=${search}+${subject}&key=${APIKEY}&maxResults=40`;
-                break;
-            case 'author':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
-                break;
-            case 'publisher':
-                url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}+${subject}'&key=${APIKEY}&maxResults=40`;
-                break;
-            // case 'genre':
-            //     url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
-            //     break;
-            // case 'ISBN':
-            //     url = `https://www.googleapis.com/books/v1/volumes?q=isbn:'${search}'&key=${APIKEY}`;
-            //     break;
-            default:
-                console.error('Invalid selector:', selector);
-                return;
-        }
-    
-        fetchBooks(url, postList);
-    }
 
-}
+    // If you want to call getBookData on button click
+    document.getElementById('searchButton').addEventListener('click', function() {
+        let title = document.getElementById('title');
+        let sub = document.getElementById('subject-select');
+        getBookData(
+            title.value,
+            sub.value,
+            document.getElementById('postList')
+        );
+        console.log(title)
+        console.log(title.value)
+    });
+});
