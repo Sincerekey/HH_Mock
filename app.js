@@ -18,8 +18,8 @@ const favoriteRoute = require('./routes/favorites.js')
 const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
 
-const landingRoute = require('./routes/landing.js')
-const kidsRoute = require('./routes/kids.js')
+// const landingRoute = require('./routes/landing.js')
+// const kidsRoute = require('./routes/kids.js')
 
 
 
