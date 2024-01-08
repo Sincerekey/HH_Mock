@@ -1,3 +1,4 @@
+const APIKEY = 'AIzaSyBEH4iSZbzuRJ6T_IPh1UdoF_1kgWPITh4';
 
 function fetchBooks(url, postList) {
     fetch(url)
@@ -14,7 +15,7 @@ function fetchBooks(url, postList) {
                         if (!book.volumeInfo.industryIdentifiers) {
                             listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                         } else {
-                            listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                            listImg.innerHTML = `<a href="bookdata?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                         }                        
                         let contiRead = document.createElement('button')
                         let favRead = document.createElement('button')
@@ -153,7 +154,7 @@ function addToFavoriteList(isbn){
     });
 }
 
-const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
+
 document.addEventListener('DOMContentLoaded', function() {
     
 
