@@ -49,6 +49,10 @@ footer {
 
 .first-list li a {
     text-decoration: none;
-    color: #0056b3; /* Add color to links */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    color: #000000;
+    transition: color 0.3s ease; 
+}
+
+li a:visited {
+    text-decoration: none;
 }
