@@ -8,25 +8,20 @@
     
 </head>
 <body>
+
     <nav>
         <%- include('partials/nav') %>
   
       </nav>
+
     <h1><%= Name %></h1>
     <main>
-        <!-- <section>
-            <%- include('partials/search') %>
-          </section> -->
-        <!-- <% Books.forEach((book) => { %>
-            <%- book %>
-       <% }); %> -->
        <%- Books.join('') %>
         </main>
     <script src="./javascripts/FindLibrary.js"></script>
 
-
-
       <footer>
+
         <%- include('partials/footer') %>
       </footer>
 </body>

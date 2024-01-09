@@ -12,6 +12,11 @@ router.get('/', (req, res) => {
         title = response.bookReturn[0].volumeInfo.title
         image = response.bookReturn[0].volumeInfo.imageLinks.thumbnail
         desc = response.bookReturn[0].volumeInfo.description
+        
+        if (!response.bookReturn[0].volumeInfo.averageRating) {
+            rate = 'No Rating Available'
+            rateCount = 'No Ratings'
+        } else {rate = response.bookReturn[0].volumeInfo.averageRating; rateCount = response.bookReturn[0].volumeInfo.ratingsCount}
         if (!response.bookReturn[0].saleInfo.listPrice) {
             price = 'Price may vary'
             sale = 'Currently unavailable for purchase'
@@ -22,7 +27,7 @@ router.get('/', (req, res) => {
         }
         
 
-        res.render('product', {title: title, img: image, description: desc, price: price, sale: sale, Name: req.session.user.first_name})
+        res.render('product', {title: title, img: image, description: desc, price: price, sale: sale, rate: rate, rateCount: rateCount})
     })
 })
 

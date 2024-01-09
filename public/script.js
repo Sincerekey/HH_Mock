@@ -1,3 +1,4 @@
+const APIKEY = 'AIzaSyBEH4iSZbzuRJ6T_IPh1UdoF_1kgWPITh4';
 
 function fetchBooks(url, postList) {
     fetch(url)
@@ -14,7 +15,7 @@ function fetchBooks(url, postList) {
                         if (!book.volumeInfo.industryIdentifiers) {
                             listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                         } else {
-                            listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                            listImg.innerHTML = `<a href="bookdata?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                         }                        
                         let contiRead = document.createElement('button')
                         let favRead = document.createElement('button')
@@ -60,16 +61,16 @@ function getBookData(search, selector, postList) {
 
     switch (selector) {
         case 'Title':
-            url = `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKEY}&maxResults=40`;
+            url = `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${APIKEY}&maxResults=10`;
             break;
         case 'author':
-            url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}'&key=${APIKEY}&maxResults=40`;
+            url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:'${search}'&key=${APIKEY}&maxResults=10`;
             break;
         case 'publisher':
-            url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}'&key=${APIKEY}&maxResults=40`;
+            url = `https://www.googleapis.com/books/v1/volumes?q=inpublisher:'${search}'&key=${APIKEY}&maxResults=10`;
             break;
         case 'genre':
-            url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=40`;
+            url = `https://www.googleapis.com/books/v1/volumes?q=subject:'${search}'&key=${APIKEY}&maxResults=10`;
             break;
         case 'ISBN':
             url = `https://www.googleapis.com/books/v1/volumes?q=isbn:'${search}'&key=${APIKEY}`;
@@ -125,12 +126,75 @@ function topBooks(slideContainer, classname) {
             // Initialize Glide carousel after fetch is completed
             const config = {
                 type: 'carousel',
-                perView: 4,
-                Autoplay: true,
+                perView: 4
             };
             new Glide(`${classname}`, config).mount();
         })
 }
+
+const NYT_API_KEY = 'kyAiSHuc87KHVmAvmswaLmFApRAdStmH'; 
+
+function nyTopBooks(slideContainer, classname) {
+    fetch(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${NYT_API_KEY}`)
+        .then((res) => res.json())
+        .then((res) => {
+            // Iterate over each book in the response
+            res.results.books.forEach((book) => {
+                // Create a list item for each book
+                let listItem = document.createElement('li');
+
+                // Set the text content to the book's title
+                listItem.textContent = book.title;
+
+                // Create an img element for the book's image
+                let listImg = document.createElement('img');
+                // Set the source of the img element
+                listImg.src = book.book_image;
+
+                // Create buttons for adding to reading list and favorites
+                let contiRead = document.createElement('button');
+                let favRead = document.createElement('button');
+
+                // Set inner HTML for both buttons
+                contiRead.innerHTML = '<i class="fa-regular fa-bookmark"></i>';
+                favRead.innerHTML = '<i class="fa-regular fa-heart"></i>';
+
+                // Add event listeners for both buttons
+                contiRead.addEventListener('click', function() {
+                    // Use primary_isbn13 from the NYT API
+                    const isbn = book.primary_isbn13;
+                    addToReadingList(isbn);
+                    // Change icon to solid after adding to reading list
+                    contiRead.innerHTML = '<i class="fa-solid fa-bookmark"></i>';
+                });
+                favRead.addEventListener('click', function() {
+                    // Use primary_isbn13 from the NYT API
+                    const isbn = book.primary_isbn13;
+                    addToFavoriteList(isbn);
+                    // Change icon to solid after adding to favorites
+                    favRead.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                });
+
+                // Append the image and buttons to the list item
+                listItem.appendChild(listImg);
+                listItem.appendChild(contiRead);
+                listItem.appendChild(favRead);
+
+                // Append the list item to the container
+                slideContainer.appendChild(listItem);
+            });
+            // Initialize Glide carousel after fetch is completed
+            new Glide(classname, {
+                type: 'carousel',
+                perView: 4
+            }).mount(); //starts the glide functionality 
+        })
+        .catch((error) => {
+            // Log any errors that occur during fetch
+            console.error('Error fetching NY Times books:', error);
+        });
+}
+
 
 function addToReadingList(isbn) {
     fetch(`/reading-list?isbn=${isbn}`)
@@ -154,7 +218,7 @@ function addToFavoriteList(isbn){
     });
 }
 
-const APIKEY = 'AIzaSyAr4Whl3injHd6SXT-1FJpfk648WqEy_ro';
+
 document.addEventListener('DOMContentLoaded', function() {
     
 
@@ -171,4 +235,5 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(title.value)
     });
 });
+
 
