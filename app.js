@@ -21,7 +21,7 @@ const nyTimesRouter = require('./routes/ny-times.js');
 
 
 const landingRoute = require('./routes/landing.js')
-// const kidsRoute = require('./routes/kids.js')
+const kidsRoute = require('./routes/kids.js')
 
 
 var app = express();
@@ -56,6 +56,7 @@ app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
 app.use('/top-20-bestsellers', nyTimesRouter);
+app.use('/kids', kidsRoute)
 
 
 
