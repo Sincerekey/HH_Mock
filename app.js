@@ -53,8 +53,8 @@ app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
-app.use('/top-20-bestsellers', nyTimesRouter);app.use('/top-20-bestsellers', nyTimesRouter)
-
+app.use('/top-20-bestsellers', nyTimesRouter)
+app.use('/landing', landingRoute)
 
 
 // catch 404 and forward to error handler
