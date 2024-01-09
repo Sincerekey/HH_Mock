@@ -43,10 +43,6 @@ We welcome contributions from the community. Feel free to open issues or submit 
 
 We value your feedback! If you encounter any issues or have suggestions for improvement, please [open an issue](https://github.com/your-username/book-worm/issues).
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Feel free to replace placeholders like `[Your Name]`, `[Your Role]`, and update URLs accordingly.
