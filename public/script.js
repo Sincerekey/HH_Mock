@@ -98,16 +98,11 @@ function topBooks(slideContainer, classname) {
                 let listItem = document.createElement('li');
                 listItem.textContent = book.volumeInfo.title;
                 let listImg = document.createElement('li');
-<<<<<<< HEAD
-                listImg.innerHTML = `<img class="ny-img" src=${book.volumeInfo.imageLinks.smallThumbnail} />`
-                let contiRead = document.createElement('button')
-=======
                 if (!book.volumeInfo.industryIdentifiers) {
                     listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                 } else {
                     listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                 }                   let contiRead = document.createElement('button')
->>>>>>> 2319a258a8a2a8accbe1f52e34473d4e4d35d2ff
                 let favRead = document.createElement('button')
                 contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
                 favRead.innerHTML= '<i class="fa-regular fa-heart"></i>'
