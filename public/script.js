@@ -15,7 +15,7 @@ function fetchBooks(url, postList) {
                         if (!book.volumeInfo.industryIdentifiers) {
                             listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                         } else {
-                            listImg.innerHTML = `<a href="bookdata?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                            listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img class='bookload' src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                         }                        
                         let contiRead = document.createElement('button')
                         let favRead = document.createElement('button')
@@ -100,9 +100,9 @@ function topBooks(slideContainer, classname) {
                 listItem.textContent = book.volumeInfo.title;
                 let listImg = document.createElement('li');
                 if (!book.volumeInfo.industryIdentifiers) {
-                    listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
+                    listImg.innerHTML = `<img class='bookload' src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                 } else {
-                    listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                    listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img class='bookload' src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                 }                   
                 let contiRead = document.createElement('button')
                 let favRead = document.createElement('button')
@@ -182,6 +182,7 @@ function nyTopBooks(slideContainer, classname) {
                 listItem.appendChild(favRead);
 
                 // Append the list item to the container
+                listItem.classList.add('ny-img');
                 slideContainer.appendChild(listItem);
             });
             // Initialize Glide carousel after fetch is completed

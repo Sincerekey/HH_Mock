@@ -1,13 +1,26 @@
+nav{
+    background-color:#fc4805;
+    padding: .2%;
+    font-size: large;
+    border-radius: 10%;
 
-#title {
-    width:300px;
-    height:30px;
 }
-
-#shelterSearch{
+#title {
+    width: 300px;
+    height: 30px;
+}
+#shelterSearch {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    /* margin-top: 2%; */
+}
+img {
+    /* display:flex; */
+    height: 100px;
+    width: 150px;
+    object-fit: cover; /* Adjust this as needed */
+    margin: 0 auto; /* Center the image horizontally in its container */ 
+
 }
