@@ -1,4 +1,4 @@
-const APIKEY = 'AIzaSyBEH4iSZbzuRJ6T_IPh1UdoF_1kgWPITh4';
+const APIKEY = 'AIzaSyCzIEXYNlt11VX248i6X4Sqnw5xki9izCQ';
 
 function fetchBooks(url, postList) {
     fetch(url)
