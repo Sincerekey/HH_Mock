@@ -55,9 +55,13 @@ app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
+
 app.use('/top-20-bestsellers', nyTimesRouter);
 app.use('/kids', kidsRoute)
 
+
+
+app.use('/landing', landingRoute)
 
 
 
