@@ -2,13 +2,6 @@ html{
     background:#f3d6a3bc ;
 }
 
-nav{
-    background-color:#fc4805;
-    padding: .2%;
-    font-size: large;
-    border-radius: 10%;
-}
-
 ul{
     list-style: none;
     display: flex;
