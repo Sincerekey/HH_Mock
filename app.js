@@ -50,10 +50,13 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
+
+
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
-app.use('/top-20-bestsellers', nyTimesRouter);app.use('/top-20-bestsellers', nyTimesRouter)
+app.use('/top-20-bestsellers', nyTimesRouter);
+
 
 
 
