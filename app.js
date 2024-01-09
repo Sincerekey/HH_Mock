@@ -17,6 +17,7 @@ const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
 const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
+const nyTimesRouter = require('./routes/ny-times.js');
 
 
 const landingRoute = require('./routes/landing.js')
@@ -54,6 +55,7 @@ app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
+app.use('/top-20-bestsellers', nyTimesRouter);
 
 
 // catch 404 and forward to error handler
