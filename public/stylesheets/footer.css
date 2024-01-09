@@ -16,23 +16,9 @@ footer {
     padding: 10px;
 }
 
-.second-list {
-    font-family: Arial, Helvetica, sans-serif;
-    color:black;
-    display:flex;
-    flex-direction: column;
-    margin: 10px;
-    padding: 10px;
-}
 
-.third-list {
-    font-family: Arial, Helvetica, sans-serif;
-    color:black;
-    display:flex;
-    flex-direction: column; 
-    margin: 10px;
-    padding: 10px;
-}
+
+
 
 .sub {
     font-family: Arial, Helvetica, sans-serif;
@@ -59,4 +45,14 @@ footer {
     padding: 3px;
     margin: 3px;
     flex: 0 0 30%; 
+}
+
+.first-list li a {
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease; 
+}
+
+li a:visited {
+    text-decoration: none;
 }
