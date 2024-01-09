@@ -24,8 +24,6 @@ const landingRoute = require('./routes/landing.js')
 // const kidsRoute = require('./routes/kids.js')
 
 
-
-
 var app = express();
 const session = require('express-session')
 
@@ -55,7 +53,8 @@ app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
 app.use('/loggin', indexLogRouter)
-app.use('/top-20-bestsellers', nyTimesRouter);
+app.use('/top-20-bestsellers', nyTimesRouter);app.use('/top-20-bestsellers', nyTimesRouter)
+
 
 
 // catch 404 and forward to error handler

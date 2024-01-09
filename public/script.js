@@ -103,7 +103,8 @@ function topBooks(slideContainer, classname) {
                     listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                 } else {
                     listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
-                }                   let contiRead = document.createElement('button')
+                }                   
+                let contiRead = document.createElement('button')
                 let favRead = document.createElement('button')
                 contiRead.innerHTML= '<i class="fa-regular fa-bookmark"></i>'
                 favRead.innerHTML= '<i class="fa-regular fa-heart"></i>'
