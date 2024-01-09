@@ -6,7 +6,7 @@ var logger = require('morgan');
 const axios = require('axios');
 
 var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login.js');
+// var loginRouter = require('./routes/login.js');
 var indexLogRouter = require('./routes/indexLog.js');
 var usersRouter = require('./routes/users');
 const homeRoute = require('./routes/home.js')
@@ -17,9 +17,12 @@ const libraryRoute = require('./routes/library.js')
 const favoriteRoute = require('./routes/favorites.js')
 const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
-const landingRoute = require('./routes/landing.js')
-const kidsRoute = require('./routes/kids.js')
 const nyTimesRouter = require('./routes/ny-times.js');
+
+
+const landingRoute = require('./routes/landing.js')
+// const kidsRoute = require('./routes/kids.js')
+
 
 var app = express();
 const session = require('express-session')
@@ -39,7 +42,7 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use('/', landingRoute);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRoute)
 app.use('/search', searchRoute)
@@ -49,10 +52,8 @@ app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
-app.use('/signUp', indexRouter)
-app.use('/Login', indexLogRouter)
-app.use('/kids', kidsRoute)
-app.use('/top-20-bestsellers', nyTimesRouter)
+app.use('/loggin', indexLogRouter)
+app.use('/top-20-bestsellers', nyTimesRouter);app.use('/top-20-bestsellers', nyTimesRouter)
 
 
 

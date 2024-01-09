@@ -42,6 +42,8 @@ router.post('/login', function(req,res,next){
             user_name: data[0].user_name,
           }
           console.log(req.session)
+          res.redirect('/home')
+
         }else{
           res.send('Incorrect Password Or Username Already In Use')
         }
@@ -55,7 +57,7 @@ router.post('/login', function(req,res,next){
               last_name: data[0].last_name,
               user_name: data[0].user_name,
             }
-            res.redirect('/login')
+            res.redirect('/home')
           }
         })
       }

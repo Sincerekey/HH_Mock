@@ -1,3 +1,4 @@
+const APIKEY = 'AIzaSyBEH4iSZbzuRJ6T_IPh1UdoF_1kgWPITh4';
 
 function fetchBooks(url, postList) {
     fetch(url)
@@ -14,7 +15,7 @@ function fetchBooks(url, postList) {
                         if (!book.volumeInfo.industryIdentifiers) {
                             listImg.innerHTML = `<img src=${book.volumeInfo.imageLinks.smallThumbnail} />`;
                         } else {
-                            listImg.innerHTML = `<a href="p?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
+                            listImg.innerHTML = `<a href="bookdata?isbn=${book.volumeInfo.industryIdentifiers[0].identifier}"><img src=${book.volumeInfo.imageLinks.smallThumbnail} /></a>`;
                         }                        
                         let contiRead = document.createElement('button')
                         let favRead = document.createElement('button')
@@ -126,8 +127,7 @@ function topBooks(slideContainer, classname) {
             // Initialize Glide carousel after fetch is completed
             const config = {
                 type: 'carousel',
-                perView: 4,
-                Autoplay: true,
+                perView: 4
             };
             new Glide(`${classname}`, config).mount();
         })
@@ -219,7 +219,7 @@ function addToFavoriteList(isbn){
     });
 }
 
-const APIKEY = 'AIzaSyBEH4iSZbzuRJ6T_IPh1UdoF_1kgWPITh4';
+
 document.addEventListener('DOMContentLoaded', function() {
     
 
