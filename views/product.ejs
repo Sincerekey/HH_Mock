@@ -8,16 +8,26 @@
     <link rel="stylesheet" href="./stylesheets/product.css">
 </head>
 <body>
-    <%- include('partials/nav') %>
     <div class="main-body">
     <img class="main-photo" alt='book photo' src="<%= img %>" width="256px" height="394 px"/>
     <div class="main-info">
     <h2><%= title %></h2>
-    <p class="desc"><%= description %></p> </div>
+    <p class=author>by <%= authors %></p>
+    <div class=rate><p><%= rate %>/5</p> <p class="ratings"><%= rateCount %> ratings</p></div>
+    <div class="line"></div>
+    <p class="desc"><%= description %></p> 
+    <div class="extra-info">
+        <div class="publisher"><p>Publisher</p><img src="/images/publisher.png" alt="publisher" width="=35px" height="35px"><p><%= publisher %></p></div>
+        <div class="lang"><p>Language</p><img src="/images/lang.png" alt="language" width="=30px" height="30px"><p><%= lang %></p></div>
+        <div class="date"><p>Publication Date</p><img src="/images/calender.png" alt="Publication Date" width="=30px" height="30px"><p><%= date %></p></div>
+        </div>
     </div>
-    <p class=price><%= price %></p>
-    <a href="<%= sale %>">Purchase</a>
     
+    <div class="purchase-info">
+    <p class=price><%= price %></p>
+    <a href="<%= sale %>" class="purchase-btn"><%= saleText %></a>
+    </div>
+    </div>
     <%- include('partials/footer') %>
 </body>
 </html>

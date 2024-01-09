@@ -3,7 +3,7 @@ html{
 }
 
 nav{
-    background-color:#fc4705b5;
+    background-color:#fc4805;
     padding: .2%;
     font-size: large;
     border-radius: 10%;
@@ -17,7 +17,7 @@ ul{
 }
 #About_us{
     margin-top: 5%;
-    background: #fc4705b5;
+    background: #fc4805;
     padding: 2%;
     display: flex;
     flex-direction: column;
@@ -35,14 +35,9 @@ ul{
 }
 
 input {
-    border: 1px solid #f3d6a3bc;
-    background: none;
+    border: 2px solid #d5a3;
 }
 
-select{
-    background: none;
-    margin: 5px;
-}
 #button{
     display: flex;
     justify-content: center;
@@ -71,7 +66,7 @@ li:hover button {
     display: inline-block; /* Display the buttons when the list item is hovered */
 }
 
-.glide__slides{
+.glide div{
     padding: 2%;
 }
 
