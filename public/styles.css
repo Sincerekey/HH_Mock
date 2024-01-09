@@ -2,13 +2,6 @@ html{
     background:#f3d6a3bc ;
 }
 
-nav{
-    background-color:#fc4805;
-    padding: .2%;
-    font-size: large;
-    border-radius: 10%;
-}
-
 ul{
     list-style: none;
     display: flex;
@@ -107,3 +100,30 @@ li:hover button {
     margin-top: 3%;
 }
 
+.ny-img {
+    height: 400px;
+    width: 222px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+.ny-img img {
+    width: 197px;
+    height: 295.4px;
+}
+
+.bookload {
+    width: 197px;
+    height: 295.4px;
+}
+
+#postList li{
+    padding-left: 10px;
+    text-align: center;
+}
+
+#postList {
+    overflow: hidden;
+}
