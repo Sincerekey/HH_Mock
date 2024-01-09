@@ -19,8 +19,6 @@ const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
 const landingRoute = require('./routes/landing.js')
 const kidsRoute = require('./routes/kids.js')
-
-
 const nyTimesRouter = require('./routes/ny-times.js');
 
 var app = express();
@@ -54,6 +52,7 @@ app.use('/p', product)
 app.use('/signUp', indexRouter)
 app.use('/Login', indexLogRouter)
 app.use('/kids', kidsRoute)
+app.use('/top-20-bestsellers', nyTimesRouter)
 
 
 
