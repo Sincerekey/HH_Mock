@@ -49,6 +49,9 @@ app.use('/reading-list', readList)
 app.use('/library', libraryRoute)
 app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
+app.use('/top-20-bestsellers', nyTimesRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
