@@ -19,7 +19,7 @@ const bookData = require('./routes/bookData.js')
 const product = require('./routes/products.js')
 
 
-// const landingRoute = require('./routes/landing.js')
+const landingRoute = require('./routes/landing.js')
 // const kidsRoute = require('./routes/kids.js')
 
 
@@ -53,10 +53,7 @@ app.use('/favorite-list', favList)
 app.use('/favorites', favoriteRoute)
 app.use('/bookdata', bookData)
 app.use('/p', product)
-
 app.use('/loggin', indexLogRouter)
-
-
 
 
 // catch 404 and forward to error handler
