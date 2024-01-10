@@ -125,5 +125,8 @@ li:hover button {
 }
 
 #postList {
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(auto);
+    grid-gap: 10px;
 }
