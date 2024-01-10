@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     const isbn = req.query.isbn;
     
     const myQuery = `INSERT INTO Library (Person_Id, ISBN) VALUES (${req.session.user.ID}, '${isbn}')`
-
+    console.log(req.session.user.ID)
     database.query(myQuery, function(err, data){
         if(err){
             throw(err)

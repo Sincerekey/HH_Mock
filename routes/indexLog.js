@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('indexLog', { title: 'Express' });
 });
 
-router.post('/home', function(req,res,next){
+router.post('/loggin', function(req,res,next){
   // console.log(req.body)
   const user_email = req.body.user_email_address
   const user_password = req.body.user_password

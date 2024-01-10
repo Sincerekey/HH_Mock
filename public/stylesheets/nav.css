@@ -24,3 +24,22 @@ img {
     margin: 0 auto; /* Center the image horizontally in its container */ 
 
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    background: #c93d0692;
+    text-decoration: underline;
+    border-radius: 25%;
+}
+/* ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+/* li{
+    padding: 4%;
+} */

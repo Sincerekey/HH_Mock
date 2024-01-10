@@ -13,8 +13,6 @@ router.post('/login', function(req,res,next){
   const last_name = req.body.last_name
   const birthday = req.body.birthday
   const username = req.body.username
-  console.log(user_email)
-  console.log(user_password)
   if(user_email && user_password){
     // write query
     myQuery = `
@@ -22,40 +20,11 @@ router.post('/login', function(req,res,next){
      WHERE email = "${user_email}"
     `
     insertQuery =`
-    INSERT INTO Person (first_name, last_name, birthday, user_name, email, password) VALUES ('${first_name}','${last_name}','${birthday}','${username}','${user_email}', '${user_password}')
+    INSERT INTO Person (first_name, last_name, birthday, user_name, 
+      email, password) VALUES ('${first_name}','${last_name}','${birthday}',
+      '${username}','${user_email}', '${user_password}')
     `
-  //   database.query(myQuery, function(err, data){
-  //     // checking to make sure we have data back
-  //     if(data.length>0){
-  //        // Verifying the password
-  //       if(data[0].password === user_password){
-  //         console.log(req.session)
-  //         req.session.user ={
-  //           ID: data[0].Id,
-  //           first_name: data[0].first_name,
-  //           last_name: data[0].last_name,
-  //           user_name: data[0].user_name,
-  //         }
-  //         console.log(req.session)
-  //         res.redirect('/home')
-  //       }else{
-  //         res.send('Incorrect Password Or Username Already In Use')
-  //       }
-  //     }else{
-  //       database.query(insertQuery, function(err, data){
-  //         if(err){
-  //           throw err
-  //         }else{
-  //           req.session.user ={
-  //             first_name: data[0].first_name,
-  //             last_name: data[0].last_name,
-  //             user_name: data[0].user_name,
-  //           }
-  //           res.redirect('/home')
-  //         }
-  //       })
-  //     }
-  //   })
+
   database.query(insertQuery, (err, data)=>{
     if(err){
       throw err
@@ -65,6 +34,7 @@ router.post('/login', function(req,res,next){
           throw err
         }else{
           req.session.user ={
+            ID: data[0].Id,
             first_name: data[0].first_name,
             last_name: data[0].last_name,
             user_name: data[0].user_name,
