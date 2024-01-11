@@ -16,10 +16,12 @@ router.get('/', function(req, res, next) {
                     
                     // console.log(data.items[0].volumeInfo.title)
 
-                    libraryList.push({
-                        title: data.items[0].volumeInfo.title,
-                        image: data.items[0].volumeInfo.imageLinks.smallThumbnail
-                    })
+                    if(data.items){
+                        libraryList.push({
+                            title: data.items[0].volumeInfo.title,
+                            image: data.items[0].volumeInfo.imageLinks.smallThumbnail
+                        })
+                    }
                 
 
                 })

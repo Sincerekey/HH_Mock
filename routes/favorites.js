@@ -17,12 +17,12 @@ router.get('/', function(req, res, next) {
                 .then((data) => data.json())
                 .then((data) => { 
                     console.log(data)
-
+                    if(data.items){
                     libraryList.push({
                         title: data.items[0].volumeInfo.title,
                         image: data.items[0].volumeInfo.imageLinks.smallThumbnail
                     })
-                
+                  }
 
                 })
             })
