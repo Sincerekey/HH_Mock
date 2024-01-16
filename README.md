@@ -1,6 +1,3 @@
-Certainly! Here's a generic README.md template for your Book Worm project:
-
----
 
 # Book Worm
 
